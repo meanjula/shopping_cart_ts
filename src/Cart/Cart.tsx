@@ -18,7 +18,6 @@ const Cart:React.FC<props>=({cartItems,addToCart,deleteFromCart})=>{
 					<p>No items in cart</p>	
 				</div>:null	}
 			{cartItems.map(item => (
-
 				<CartItem
 				key={item.id}
 				item={item}

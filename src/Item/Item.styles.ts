@@ -9,7 +9,7 @@ flex-direction:column;
 border:1px solid lightblue;
 border-radius:20px;
 *{
-	border:1px solid blue;
+	
 	margin:0;
 }
 img{

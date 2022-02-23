@@ -57,6 +57,8 @@ When setCartOpen(true) cartItem is displayed but if setCartOpen(false) cartItem 
 <CartButton  onClick={()=>setCartOpen(true)}><CartButton/>
 ```
 
+### handleAddToCart
+
 ## Item
 
 ### Item tsx

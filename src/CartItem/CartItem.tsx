@@ -2,6 +2,7 @@
 import { Button } from "@mui/material";
 import { Wrapper } from "./CartItem.styles";
 import { cartItemType } from "../App";
+import Item from "../Item/Item";
 
 type props ={
 	item:cartItemType;//single item no need array
@@ -9,13 +10,26 @@ type props ={
 	deleteFromCart:(id:number)=>void;
 }
 
-const CartItem:React.FC<props>=()=>{
+const CartItem:React.FC<props>=({item,addToCart,deleteFromCart})=>{
 	return(
 		<Wrapper>
-			<h2> Shopping Items inside cart</h2>
 			<div>
-				<Button></Button>
+			<h4>You have {item.amount} items in your shopping cart</h4>
+			<h3>{item.title}</h3>
+            <div className='information'>
+              <p>Price: ${item.price}</p>
+            </div>	
+			<div className="buttons">
+				<Button size="small" disableElevation variant="contained" onClick={() => deleteFromCart(item.id)}> - </Button>
+				<p>{item.amount}</p>
+				<Button size="small" disableElevation variant="contained" onClick={() => addToCart(item)}> + </Button>
 			</div>	
+			</div>
+			<div>
+			<img src={item.image} alt={item.title}/>
+			<p>Total: ${(item.amount * item.price).toFixed(2)}</p>
+			</div>
+			
 	   </Wrapper>
 	)
 }
