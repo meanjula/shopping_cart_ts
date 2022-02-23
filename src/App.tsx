@@ -12,6 +12,7 @@ import { useState } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { CartButton } from './App.styles';
+import Cart from './Cart/Cart';
 export type cartItemType={
   id:number;
   category:string;
@@ -32,17 +33,20 @@ const App=()=> {
   const [cartOpen,setCartOpen]=useState(false);
   const [cartItems,setCartItems]=useState([] as cartItemType[])
 
-  const handleAddToCart=(clickedItem:cartItemType)=> null;
   const getAddedItem=(items:cartItemType[])=> 
   items.reduce((acc:number,item) => acc + item.amount,0)
+
+  const handleAddToCart=(clickedItem:cartItemType)=> null;
   
+  const handleDeleteFromCart=(id:number)=>null;
+
   if (isLoading) return <LinearProgress/>
- 
   if (error) return <div>Something went wrong....</div> 
+  
   return (
     <Box>
       <Drawer anchor='right' open={cartOpen} onClose={()=>setCartOpen(false)}>
-        cart goes here
+      <Cart deleteFromCart={handleDeleteFromCart} addToCart={handleAddToCart} cartItems={...cartItems}/>
       </Drawer> 
       <CartButton  onClick={()=>setCartOpen(true)}>
         <Badge badgeContent={getAddedItem(cartItems)} color="secondary">
