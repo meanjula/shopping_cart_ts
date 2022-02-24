@@ -70,3 +70,24 @@ When setCartOpen(true) cartItem is displayed but if setCartOpen(false) cartItem 
 ```js
 <Button onClick={() => handleAddToCart(item)}>Add to cart</Button>
 ```
+
+## Technologies used
+
+Built with:
+
+- Reactjs
+- Typescript
+- React component
+- Mui
+- react Query
+
+## Screenshot
+
+![project screenshot](./screenshot-shoppingCart.png)
+
+## Authors and acknowledgment
+
+Anjula Timsina
+
+- [GitHub](https://github.com/meanjula)
+- [linkedIn](https://www.linkedin.com/in/meanjula/)
