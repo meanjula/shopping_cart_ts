@@ -11,6 +11,13 @@ img{
 	object-fit:cover;
 	
 }
-
+.buttons{
+	display:flex;
+}
+.button{
+	border:1px solid black;
+	color:black;
+	margin:1rem;
+}
 
 `

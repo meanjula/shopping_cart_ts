@@ -10,14 +10,17 @@ type props ={
 	handleAddToCart:(clickedItem:cartItemType)=>void;
 }
 const Item:React.FC<props> =({item,handleAddToCart}) => (	
-	<Wrapper>
-		 <img src={item.image} alt={item.title}/> 
+	<Wrapper >
+		
+		<div ><img src={item.image} alt={item.title}/></div>
 		<div>
 			 <h3>{item.title}</h3> 
 			 <p>{item.description}</p>
 			 <h3>€{item.price}</h3>
 		</div>
 		<Button onClick={()=>handleAddToCart(item)}>Add to cart</Button>
+
+		
 	</Wrapper>
 	
 )

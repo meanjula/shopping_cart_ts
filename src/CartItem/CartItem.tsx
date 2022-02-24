@@ -2,7 +2,7 @@
 import { Button } from "@mui/material";
 import { Wrapper } from "./CartItem.styles";
 import { cartItemType } from "../App";
-import Item from "../Item/Item";
+
 
 type props ={
 	item:cartItemType;//single item no need array
@@ -20,16 +20,15 @@ const CartItem:React.FC<props>=({item,addToCart,deleteFromCart})=>{
               <p>Price: ${item.price}</p>
             </div>	
 			<div className="buttons">
-				<Button size="small" disableElevation variant="contained" onClick={() => deleteFromCart(item.id)}> - </Button>
+				<Button className="button" size="small" disableElevation variant="outlined" onClick={() => deleteFromCart(item.id)}> - </Button>
 				<p>{item.amount}</p>
-				<Button size="small" disableElevation variant="contained" onClick={() => addToCart(item)}> + </Button>
+				<Button className="button" size="small" disableElevation variant="outlined" onClick={() => addToCart(item)}> + </Button>
 			</div>	
 			</div>
 			<div>
 			<img src={item.image} alt={item.title}/>
 			<p>Total: ${(item.amount * item.price).toFixed(2)}</p>
-			</div>
-			
+			</div>	
 	   </Wrapper>
 	)
 }

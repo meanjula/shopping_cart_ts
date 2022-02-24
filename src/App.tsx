@@ -53,6 +53,7 @@ const App=()=> {
   const handleDeleteFromCart=(id:number)=>{ 
     setCartItems(prevItems => prevItems.reduce((acc, item) => {
       if (item.id === id) {
+        if(item.amount===1) return acc;
         return [...acc, { ...item, amount: item.amount - 1 }];
       } 
       return [...acc, item];
